@@ -1,0 +1,341 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>С Днём Отца</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#6fd1ff,
+#ffd7eb
+);
+
+text-align:center;
+
+overflow:hidden;
+
+min-height:100vh;
+
+}
+
+.container{
+
+padding:20px;
+
+}
+
+.photo{
+
+width:100%;
+
+max-width:390px;
+
+height:240px;
+
+object-fit:cover;
+
+border-radius:24px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.25);
+
+}
+
+h1{
+
+margin-top:20px;
+
+font-size:34px;
+
+}
+
+.buttons{
+
+margin-top:30px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+button{
+
+padding:20px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:20px;
+
+background:white;
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+#win{
+
+display:none;
+
+}
+
+.win-photo{
+
+width:100%;
+
+max-width:390px;
+
+height:260px;
+
+object-fit:cover;
+
+border-radius:24px;
+
+margin-top:10px;
+
+}
+
+.ok{
+
+font-size:38px;
+
+margin-top:15px;
+
+color:#00a53d;
+
+font-weight:bold;
+
+}
+
+.text{
+
+margin-top:20px;
+
+font-size:24px;
+
+line-height:1.8;
+
+color:#ff006e;
+
+}
+
+.heart{
+
+position:fixed;
+
+pointer-events:none;
+
+animation:fly linear;
+
+z-index:999;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:
+translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-170vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="quiz">
+
+<img
+class="photo"
+src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9">
+
+<h1>
+Сегодня какой день?
+</h1>
+
+<div class="buttons">
+
+<button onclick="bad()">
+День матери
+</button>
+
+<button onclick="good()">
+День отца
+</button>
+
+<button onclick="bad()">
+День рождения
+</button>
+
+<button onclick="bad()">
+Праздник
+</button>
+
+</div>
+
+</div>
+
+<div id="win">
+
+<img
+class="win-photo"
+src="https://images.unsplash.com/photo-1511988617509-a57c8a288659">
+
+<div class="ok">
+✅ Правильно!
+</div>
+
+<div class="text">
+
+🎉 С Днём Отца! 🎉
+
+<br><br>
+
+С днем отца  ❤️ 💙
+
+Ийгилик каалайм ✨ 🚀
+
+Кундо жылмайып журун ☀️ ☀️
+
+Эч качан орубан 😊 😊
+
+Иштеринизге ийгиликтерди каалайм каалайм 🚀 ✨
+
+<br><br>
+
+Омурнуз узун юолсун коп жашан 💙 ❤️
+
+Куттуктайм 🥳
+<br>
+<img src="WhatsApp Image 2026-06-21 at 15.12.34.jpeg" alt="">
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function bad(){
+
+alert("❌ Неправильно");
+
+}
+
+function good(){
+
+document
+.getElementById("quiz")
+.style.display="none";
+
+document
+.getElementById("win")
+.style.display="block";
+
+for(
+let i=0;
+i<800;
+i++
+){
+
+setTimeout(()=>{
+
+let h=
+document
+.createElement("div");
+
+h.className=
+"heart";
+
+h.innerHTML=
+"❤️";
+
+h.style.left=
+Math.random()*100
++"vw";
+
+h.style.top=
+100+"vh";
+
+h.style.fontSize=
+(
+20+
+Math.random()*80
+)
++"px";
+
+h.style.animationDuration=
+(
+2+
+Math.random()*5
+)
++"s";
+
+document.body
+.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},7000);
+
+},
+
+i*8);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
